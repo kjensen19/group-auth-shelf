@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
 
     pool.query(sqlQuery)
       .then(dbRes => {
-        console.log(dbRes)
+        // console.log(dbRes)
         res.send(dbRes.rows)
       })
       .catch(dbErr => {
@@ -28,8 +28,8 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
   // endpoint functionality
   console.log('POST this shizz:', req.body);
-  const description = req.body.name;
-  const image_url = req.body.url
+  const description = req.body.itemName;
+  const image_url = req.body.newItem
   const user_id = req.body.userId;
 
   const queryText = `
