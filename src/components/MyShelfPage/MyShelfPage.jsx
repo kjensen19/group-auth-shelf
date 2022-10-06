@@ -34,8 +34,8 @@ function MyShelfPage() {
   return (
     <div className="container">
       <AddItem />
-      <h2>Shelf</h2>
-      <p>All of the available items can be seen here.</p>
+      <h2>My Shelf</h2>
+      <p>All of your items can be seen here.</p>
       <ul>Shelf Things:
         {shelfItems.map(item => (
           <li key={item.id}>{item.descripition}<img src={item.image_url} onClick={e=>handleDelete(e,item)}></img></li>
