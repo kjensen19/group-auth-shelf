@@ -17,6 +17,6 @@ CREATE TABLE "item" (
 );
 
 INSERT into "item"("description", "image_url", "user_id")
-  VALUES('duck', 'https://amsterdamduckstore.com/wp-content/uploads/2019/09/Whooping-rubber-duck-front-Amsterdam-Duck-Store.jpg', '1'),
-  		('loab', 'https://th-thumbnailer.cdn-si-edu.com/Jvween4IqwhnqjLh_3qyW7p7NmY=/1000x750/filters:no_upscale():focal(512x405:513x406)/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer_public/ff/45/ff458986-1c34-4074-8861-6773a005247b/loab.jpg', '2'),
-  		('jackfruit', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.melissas.com%2Fproducts%2Fjackfruit-fresh&psig=AOvVaw2CI_JFKrbVZD1KJkBNPawu&ust=1665091103294000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCOCfzYaCyvoCFQAAAAAdAAAAABAD', '1');
+    VALUES('duck', 'https://amsterdamduckstore.com/wp-content/uploads/2019/09/Whooping-rubber-duck-front-Amsterdam-Duck-Store.jpg', '1'),
+        ('loab', 'https://th-thumbnailer.cdn-si-edu.com/Jvween4IqwhnqjLh_3qyW7p7NmY=/1000x750/filters:no_upscale():focal(512x405:513x406)/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer_public/ff/45/ff458986-1c34-4074-8861-6773a005247b/loab.jpg', '2'),
+        ('jackfruit', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.melissas.com%2Fproducts%2Fjackfruit-fresh&psig=AOvVaw2CI_JFKrbVZD1KJkBNPawu&ust=1665091103294000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCOCfzYaCyvoCFQAAAAAdAAAAABAD', '1');

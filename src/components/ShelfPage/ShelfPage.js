@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import AddItem from '../AddItem/AddItem';
 
 function ShelfPage() {
 const dispatch = useDispatch()
@@ -14,6 +15,7 @@ const dispatch = useDispatch()
   const shelfItems = useSelector(store => store.shelfReducer)
   return (
     <div className="container">
+      <AddItem />
       <h2>Shelf</h2>
       <p>All of the available items can be seen here.</p>
       <ul>Shelf Things:

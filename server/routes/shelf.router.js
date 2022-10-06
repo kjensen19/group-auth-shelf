@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
 
     pool.query(sqlQuery)
       .then(dbRes => {
-        console.log(dbRes)
+        // console.log(dbRes)
         res.send(dbRes.rows)
       })
       .catch(dbErr => {
@@ -27,6 +27,21 @@ router.get('/', (req, res) => {
  */
 router.post('/', (req, res) => {
   // endpoint functionality
+  console.log('POST this shizz:', req.body);
+  const description = req.body.itemName;
+  const image_url = req.body.newItem
+  const user_id = req.body.userId;
+
+  const queryText = `
+    INSERT INTO "item" (description, image_url, user_id)
+      VALUES ($1, $2, $3)
+  `;
+  pool.query(queryText, [description, image_url, user_id])
+    .then(() => res.sendStatus(201))
+    .catch((err) => {
+      console.log('Item Add failed:', err);
+      res.sendStatus(500);
+    });
 });
 
 /**
