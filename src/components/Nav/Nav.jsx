@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import './Nav.css';
 import { useSelector } from 'react-redux';
 
 function Nav() {
+  const history=useHistory();
   const user = useSelector((store) => store.user);
 
   return (
@@ -27,6 +28,9 @@ function Nav() {
             <Link className="navLink" to="/shelf">
               The Shelf
             </Link>
+            <button className="navLink" onClick={e=>history.push(`/shelf/${user.id}`)}>
+              My Shelf
+            </button>
             <LogOutButton className="navLink" />
           </>
         )}

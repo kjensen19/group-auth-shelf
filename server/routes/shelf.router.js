@@ -3,6 +3,10 @@ const pool = require('../modules/pool');
 const router = express.Router();
 const { rejectUnauthenticated } = require('../modules/authentication-middleware')
 
+//DO WE NEED TO INSERT REJECTUNAUTHORIZED IN ANY OF THESE REQUESTS TO MAKE THE SECURE??
+
+
+
 /**
  * Get all of the items on the shelf
  */
@@ -80,10 +84,21 @@ router.get('/count', (req, res) => {
 });
 
 /**
- * Return a specific item by id
+ * Return a user items
  */
-router.get('/:id', (req, res) => {
-  // endpoint functionality
+router.get('/user', (req, res) => {
+    const sqlQuery = `
+      SELECT * FROM "item" WHERE user_id = $1;
+    `
+    pool.query(sqlQuery,[req.user.id])
+      .then(dbRes => {
+        // console.log(dbRes)
+        res.send(dbRes.rows)
+      })
+      .catch(dbErr => {
+        console.log('GET ERROR:', dbErr)
+        res.sendStatus(500)
+      })
 });
 
 module.exports = router;
